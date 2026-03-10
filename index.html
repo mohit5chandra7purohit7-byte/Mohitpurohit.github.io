@@ -1057,23 +1057,23 @@
         <h2 class="section-title">Assignments</h2>
         <div class="section-divider"></div>
 
-        <div class="cert-grid">
-            <!-- Assignment 1 -->
-            <div class="cert-card" onclick="openCert('assets/assignments/Assignment1.pdf', 'Assignment 1')">
-                <div class="cert-preview">
-                    <!-- Note: iframe preview might not render on all mobile browsers, but serves as a quick preview on desktop -->
-                    <iframe src="assets/assignments/Assignment1.pdf#toolbar=0&navpanes=0&scrollbar=0"
-                        title="Assignment 1"></iframe>
-                    <div class="cert-preview-overlay"></div>
-                </div>
-                <div class="cert-info">
-                    <span class="cert-name">📄 Assignment 1</span>
-                    <span class="cert-badge">Project</span>
-                </div>
-                <div class="cert-actions">
-                    <span class="cert-btn cert-btn-view" onclick="event.stopPropagation(); openCert('assets/assignments/Assignment1.pdf', 'Assignment 1')">View</span>
-                    <a class="cert-btn cert-btn-dl" href="assets/assignments/Assignment1.pdf" download onclick="event.stopPropagation()">⬇ Download</a>
-                </div>
+        <div class="tri-grid">
+
+            <!-- ASSIGNMENTS PANEL -->
+            <div class="panel reveal" id="assignments-panel">
+                <div class="panel-icon">📝</div>
+                <h3 class="panel-title">Assignments</h3>
+                <ul class="assignment-list">
+                    <li>Network Packet Analysis using Wireshark – captured and analyzed traffic to identify anomalies.
+                    </li>
+                    <li>Web Application Penetration Test – identified SQLi and XSS vulnerabilities in a test
+                        environment.</li>
+                    <li>Malware Reverse Engineering – dissected a sample binary using tools like Ghidra and IDA Free.
+                    </li>
+                    <li>Cloud Security Audit – reviewed IAM policies and S3 bucket configurations on AWS.</li>
+                    <li>CTF Challenge Write-Ups – documented solutions for Hack The Box and TryHackMe rooms.</li>
+                    <li>Incident Response Simulation – led a tabletop exercise and drafted the response playbook.</li>
+                </ul>
             </div>
         </div>
     </section>
