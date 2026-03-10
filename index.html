@@ -438,6 +438,191 @@
         }
 
         /* =========================================
+       CERTIFICATES / GALLERY SECTION
+    ========================================= */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            margin-bottom: 0;
+        }
+
+        .cert-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform .25s, box-shadow .25s, border-color .25s;
+            cursor: pointer;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--glow);
+            border-color: rgba(0, 255, 135, 0.45);
+        }
+
+        .cert-preview {
+            width: 100%;
+            height: 220px;
+            background: #0d0d14;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cert-preview iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+        }
+
+        .cert-preview-overlay {
+            position: absolute;
+            inset: 0;
+            background: transparent;
+            z-index: 2;
+        }
+
+        .cert-info {
+            padding: 20px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .cert-name {
+            font-size: .95rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .cert-badge {
+            font-size: .72rem;
+            font-weight: 600;
+            color: var(--green);
+            background: rgba(0,255,135,.08);
+            border: 1px solid rgba(0,255,135,.2);
+            border-radius: 999px;
+            padding: 3px 10px;
+            white-space: nowrap;
+        }
+
+        .cert-actions {
+            display: flex;
+            gap: 10px;
+            padding: 0 22px 20px;
+        }
+
+        .cert-btn {
+            flex: 1;
+            padding: 9px 0;
+            border-radius: 8px;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+            cursor: pointer;
+            border: none;
+            transition: all .2s;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cert-btn-view {
+            background: linear-gradient(135deg, var(--green2), var(--green));
+            color: #000;
+        }
+
+        .cert-btn-view:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,255,135,.3);
+            color: #000;
+        }
+
+        .cert-btn-dl {
+            background: transparent;
+            border: 1.5px solid var(--border);
+            color: var(--text);
+        }
+
+        .cert-btn-dl:hover {
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        /* Modal */
+        .cert-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.85);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+        }
+
+        .cert-modal.open {
+            display: flex;
+        }
+
+        .cert-modal-inner {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 900px;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cert-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cert-modal-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .cert-modal-close {
+            background: none;
+            border: none;
+            color: var(--muted);
+            font-size: 1.6rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: color .2s;
+        }
+
+        .cert-modal-close:hover { color: var(--green); }
+
+        .cert-modal-body {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .cert-modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* =========================================
        THREE COLUMNS: ASSIGNMENTS / LEARNINGS / GALLERY
     ========================================= */
         .tri-grid {
@@ -860,25 +1045,83 @@
                 </div>
             </div>
 
-            <!-- GALLERY PANEL -->
-            <div class="panel reveal" id="gallery">
-                <div class="panel-icon">🖼️</div>
-                <h3 class="panel-title">Gallery</h3>
-                <div class="gallery-mini">
-                    <!-- Replace emojis with <img> tags once you have actual screenshots/photos -->
-                    <div class="gallery-thumb" title="Wireshark Analysis">🔍</div>
-                    <div class="gallery-thumb" title="CTF Flag Captured">🚩</div>
-                    <div class="gallery-thumb" title="Terminal Hacking Session">💻</div>
-                    <div class="gallery-thumb" title="Certificate of Achievement">🏆</div>
+        </div>
+    </section>
+
+    <!-- ===================== CERTIFICATES / GALLERY ===================== -->
+    <section class="section reveal" id="gallery">
+        <span class="section-label">// 03 &nbsp; Achievements</span>
+        <h2 class="section-title">Certificates &amp; Gallery</h2>
+        <div class="section-divider"></div>
+
+        <div class="cert-grid">
+
+            <!-- Certificate 1: Best Intern -->
+            <div class="cert-card" onclick="openCert('assets/gallery/best-intern.pdf', 'Best Intern Award')">
+                <div class="cert-preview">
+                    <iframe src="assets/gallery/best-intern.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                        title="Best Intern Award"></iframe>
+                    <div class="cert-preview-overlay"></div>
                 </div>
-                <p style="margin-top:16px; font-size:.82rem; color:var(--muted);">
-                    Add your screenshots, certificates, or project images above by replacing the emoji divs with
-                    &lt;img&gt; elements.
-                </p>
+                <div class="cert-info">
+                    <span class="cert-name">🏆 Best Intern Award</span>
+                    <span class="cert-badge">Internship</span>
+                </div>
+                <div class="cert-actions">
+                    <span class="cert-btn cert-btn-view" onclick="event.stopPropagation(); openCert('assets/gallery/best-intern.pdf', 'Best Intern Award')">View</span>
+                    <a class="cert-btn cert-btn-dl" href="assets/gallery/best-intern.pdf" download onclick="event.stopPropagation()">⬇ Download</a>
+                </div>
+            </div>
+
+            <!-- Certificate 2: AWS -->
+            <div class="cert-card" onclick="openCert('assets/gallery/aws.pdf', 'AWS Certificate')">
+                <div class="cert-preview">
+                    <iframe src="assets/gallery/aws.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                        title="AWS Certificate"></iframe>
+                    <div class="cert-preview-overlay"></div>
+                </div>
+                <div class="cert-info">
+                    <span class="cert-name">☁️ AWS Certificate</span>
+                    <span class="cert-badge">Cloud</span>
+                </div>
+                <div class="cert-actions">
+                    <span class="cert-btn cert-btn-view" onclick="event.stopPropagation(); openCert('assets/gallery/aws.pdf', 'AWS Certificate')">View</span>
+                    <a class="cert-btn cert-btn-dl" href="assets/gallery/aws.pdf" download onclick="event.stopPropagation()">⬇ Download</a>
+                </div>
+            </div>
+
+            <!-- Certificate 3: Achievement -->
+            <div class="cert-card" onclick="openCert('assets/gallery/achievement.pdf', 'Achievement Certificate')">
+                <div class="cert-preview">
+                    <iframe src="assets/gallery/achievement.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                        title="Achievement Certificate"></iframe>
+                    <div class="cert-preview-overlay"></div>
+                </div>
+                <div class="cert-info">
+                    <span class="cert-name">🎓 Achievement Certificate</span>
+                    <span class="cert-badge">Academic</span>
+                </div>
+                <div class="cert-actions">
+                    <span class="cert-btn cert-btn-view" onclick="event.stopPropagation(); openCert('assets/gallery/achievement.pdf', 'Achievement Certificate')">View</span>
+                    <a class="cert-btn cert-btn-dl" href="assets/gallery/achievement.pdf" download onclick="event.stopPropagation()">⬇ Download</a>
+                </div>
             </div>
 
         </div>
     </section>
+
+    <!-- Certificate Modal -->
+    <div class="cert-modal" id="certModal" onclick="closeCert(event)">
+        <div class="cert-modal-inner">
+            <div class="cert-modal-header">
+                <span class="cert-modal-title" id="certModalTitle"></span>
+                <button class="cert-modal-close" onclick="closeCert(null)">&times;</button>
+            </div>
+            <div class="cert-modal-body">
+                <iframe id="certModalFrame" src="" title="Certificate Viewer"></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- ===================== CONTACT ===================== -->
     <section class="section reveal" id="contact">
@@ -930,7 +1173,7 @@
         <p>&copy; 2026 <span>Mohit Chandra Purohit</span>. Crafted with passion &amp; ☕</p>
     </footer>
 
-    <!-- ===================== SCROLL-REVEAL JS ===================== -->
+    <!-- ===================== SCROLL-REVEAL + CERT MODAL JS ===================== -->
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => {
@@ -941,6 +1184,24 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function openCert(src, title) {
+            document.getElementById('certModalFrame').src = src;
+            document.getElementById('certModalTitle').textContent = title;
+            document.getElementById('certModal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCert(e) {
+            if (e && e.target !== document.getElementById('certModal')) return;
+            document.getElementById('certModal').classList.remove('open');
+            document.getElementById('certModalFrame').src = '';
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeCert(null);
+        });
     </script>
 
 </body>
