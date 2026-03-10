@@ -1017,23 +1017,114 @@
             <div class="panel reveal" id="learnings">
                 <div class="panel-icon">🧠</div>
                 <h3 class="panel-title">Learnings</h3>
-                <div class="tags">
-                    <span class="tag">TCP/IP Model</span>
-                    <span class="tag">OWASP Top 10</span>
-                    <span class="tag">Metasploit</span>
-                    <span class="tag">Burp Suite</span>
-                    <span class="tag">Nmap</span>
-                    <span class="tag">Wireshark</span>
-                    <span class="tag">Kali Linux</span>
-                    <span class="tag">Python Scripting</span>
-                    <span class="tag">SIEM Basics</span>
-                    <span class="tag">Firewall Rules</span>
-                    <span class="tag">VPN & Tunneling</span>
-                    <span class="tag">Cryptography</span>
-                    <span class="tag">OSINT Techniques</span>
-                    <span class="tag">Blue Team Defense</span>
-                    <span class="tag">Threat Modeling</span>
-                    <span class="tag">Zero-Day Research</span>
+                <!-- Add some inline styles just for the new accordion so it matches the theme perfectly -->
+                <style>
+                    details.class-accordion { margin-bottom: 12px; background: rgba(0,255,135,0.03); border: 1px solid rgba(0,255,135,0.1); border-radius: 8px; overflow: hidden; }
+                    details.class-accordion summary { padding: 12px 16px; cursor: pointer; font-weight: 600; font-size: .9rem; color: var(--green); list-style: none; display: flex; align-items: center; justify-content: space-between; user-select: none; }
+                    details.class-accordion summary::-webkit-details-marker { display: none; }
+                    details.class-accordion summary::after { content: '+'; font-size: 1.2rem; line-height: 1; transition: transform 0.2s; }
+                    details.class-accordion[open] summary::after { transform: rotate(45deg); }
+                    details.class-accordion[open] summary { border-bottom: 1px solid rgba(0,255,135,0.1); }
+                    .class-content { padding: 16px; font-size: .85rem; color: var(--text); }
+                    .class-content ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+                    .class-content ul li { position: relative; padding-left: 14px; line-height: 1.5; }
+                    .class-content ul li::before { content: '▹'; color: var(--cyan); position: absolute; left: 0; top: 0; }
+                </style>
+                <div class="classes-list">
+                    <!-- Class 1 -->
+                    <details class="class-accordion">
+                        <summary>📘 Class 1: Communication Skills</summary>
+                        <div class="class-content">
+                            <ul>
+                                <li>How to structure thoughts clearly before speaking or writing</li>
+                                <li>Difference between verbal and non-verbal communication</li>
+                                <li>How to maintain eye contact and confident body language</li>
+                                <li>Active listening techniques to improve understanding</li>
+                                <li>How to adapt communication style for different audiences</li>
+                                <li>Importance of tone, pitch, and pace in spoken communication</li>
+                                <li>Writing professional emails with proper format and etiquette</li>
+                                <li>How to give and receive constructive feedback effectively</li>
+                                <li>Avoiding filler words and improving fluency in speech</li>
+                                <li>Group discussion etiquette and how to put your point across assertively</li>
+                            </ul>
+                        </div>
+                    </details>
+                    
+                    <!-- Class 2 -->
+                    <details class="class-accordion">
+                        <summary>📘 Class 2: Resume &amp; Interviews</summary>
+                        <div class="class-content">
+                            <ul>
+                                <li>How to write a crisp, ATS-friendly resume</li>
+                                <li>What recruiters look for in the first 10 seconds of a resume</li>
+                                <li>Difference between a resume, CV, and cover letter</li>
+                                <li>How to tailor your resume for specific job roles</li>
+                                <li>Structuring a strong objective/summary statement</li>
+                                <li>How to answer "Tell me about yourself" confidently</li>
+                                <li>Understanding common HR interview questions and how to frame answers</li>
+                                <li>The STAR method (Situation, Task, Action, Result) for behavioral questions</li>
+                                <li>How to research a company before an interview</li>
+                                <li>Post-interview etiquette — follow-up emails and thank-you notes</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <!-- Class 3 -->
+                    <details class="class-accordion">
+                        <summary>📘 Class 3: Ethics &amp; Behavior</summary>
+                        <div class="class-content">
+                            <ul>
+                                <li>Understanding workplace hierarchy and when to escalate issues</li>
+                                <li>Punctuality, dress code, and professional conduct at work</li>
+                                <li>Ethics in the workplace — honesty, integrity, and accountability</li>
+                                <li>How to handle conflict with colleagues professionally</li>
+                                <li>Importance of respecting diversity and inclusion at work</li>
+                                <li>Understanding corporate confidentiality and data privacy</li>
+                                <li>Difference between being assertive and being aggressive</li>
+                                <li>How to manage professional relationships with seniors and peers</li>
+                                <li>Accepting criticism without being defensive</li>
+                                <li>Building a reputation of reliability and consistency at work</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <!-- Class 4 -->
+                    <details class="class-accordion">
+                        <summary>📘 Class 4: Leadership &amp; Teams</summary>
+                        <div class="class-content">
+                            <ul>
+                                <li>Characteristics of an effective team player</li>
+                                <li>How to delegate tasks fairly and track accountability</li>
+                                <li>Difference between a boss and a leader</li>
+                                <li>How to manage disagreements within a team constructively</li>
+                                <li>Decision-making under pressure and with limited information</li>
+                                <li>Root cause analysis — identifying the real problem, not just symptoms</li>
+                                <li>Brainstorming techniques like mind mapping and the 5 Whys</li>
+                                <li>Time management and priority-setting using tools like Eisenhower Matrix</li>
+                                <li>How to lead a meeting effectively and stay on agenda</li>
+                                <li>Building trust within a team through transparency and consistency</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <!-- Class 5 -->
+                    <details class="class-accordion">
+                        <summary>📘 Class 5: Brand &amp; Career</summary>
+                        <div class="class-content">
+                            <ul>
+                                <li>What personal branding means and why it matters early in your career</li>
+                                <li>How to build and optimize a LinkedIn profile</li>
+                                <li>Networking etiquette — online and offline</li>
+                                <li>How to approach professionals for mentorship or guidance</li>
+                                <li>Setting short-term and long-term career goals using SMART framework</li>
+                                <li>Understanding different career paths available after your degree</li>
+                                <li>Importance of upskilling and continuous learning in the industry</li>
+                                <li>How to handle rejection in job applications without losing motivation</li>
+                                <li>Freelancing vs full-time employment — pros, cons, and when to choose</li>
+                                <li>How to present yourself confidently in group tasks, GDs, and presentations</li>
+                            </ul>
+                        </div>
+                    </details>
                 </div>
             </div>
 
