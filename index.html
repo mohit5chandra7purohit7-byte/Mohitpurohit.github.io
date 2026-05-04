@@ -847,108 +847,47 @@
     ========================================= */
         .downloads-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
             margin-top: 36px;
-        }
-
-        @media (max-width: 960px) {
-            .downloads-row { grid-template-columns: 1fr; }
         }
 
         .dl-card {
             background: var(--card2);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            overflow: hidden;
+            padding: 36px 32px;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
             transition: transform .25s, box-shadow .25s, border-color .25s;
         }
 
         .dl-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             box-shadow: var(--glow);
-            border-color: rgba(0, 255, 135, 0.45);
-        }
-
-        .dl-card-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 18px 22px 14px;
-            border-bottom: 1px solid var(--border);
+            border-color: rgba(0, 255, 135, 0.5);
         }
 
         .dl-card-icon {
-            font-size: 2rem;
+            font-size: 3rem;
             line-height: 1;
         }
 
         .dl-card-title {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #fff;
         }
 
         .dl-card-desc {
-            font-size: .82rem;
+            font-size: .85rem;
             color: var(--muted);
             line-height: 1.5;
-        }
-
-        /* The embedded PDF iframe */
-        .dl-pdf-embed {
-            width: 100%;
-            height: 520px;
-            border: none;
-            background: #1a1a24;
-            display: block;
-        }
-
-        .dl-btn-row {
-            display: flex;
-            gap: 10px;
-            padding: 14px 18px;
-            border-top: 1px solid var(--border);
-            background: var(--card);
-        }
-
-        .dl-btn {
-            flex: 1;
-            padding: 9px 0;
-            border-radius: 8px;
-            font-size: .8rem;
-            font-weight: 700;
-            letter-spacing: .04em;
-            cursor: pointer;
-            border: none;
-            transition: all .2s;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .dl-btn-primary {
-            background: linear-gradient(135deg, var(--green2), var(--green));
-            color: #000;
-        }
-
-        .dl-btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,255,135,.35);
-            color: #000;
-        }
-
-        .dl-btn-outline {
-            background: transparent;
-            border: 1.5px solid var(--border);
-            color: var(--text);
-        }
-
-        .dl-btn-outline:hover {
-            border-color: var(--green);
-            color: var(--green);
         }
 
         .dl-section-label {
@@ -1200,58 +1139,18 @@
         <div class="downloads-row reveal" id="downloads">
 
             <!-- Cover Letter -->
-            <div class="dl-card">
-                <div class="dl-card-header">
-                    <div class="dl-card-icon">📄</div>
-                    <div>
-                        <div class="dl-card-title">Cover Letter</div>
-                        <div class="dl-card-desc">My professional cover letter highlighting my background in Cyber Security.</div>
-                    </div>
-                </div>
-                <iframe
-                    class="dl-pdf-embed"
-                    src="assets/assignments/Cover_Letter.pdf"
-                    title="Cover Letter PDF"
-                    id="cover-letter-embed"
-                ></iframe>
-                <div class="dl-btn-row">
-                    <a class="dl-btn dl-btn-primary"
-                       href="assets/assignments/Cover_Letter.pdf"
-                       target="_blank"
-                       id="view-cover-letter">🔗 Open Full Screen</a>
-                    <a class="dl-btn dl-btn-outline"
-                       href="assets/assignments/Cover_Letter.pdf"
-                       download="Cover_Letter.pdf"
-                       id="dl-cover-letter">⬇ Download</a>
-                </div>
-            </div>
+            <a class="dl-card" href="assets/assignments/Cover_Letter.pdf" target="_blank" id="view-cover-letter">
+                <div class="dl-card-icon">📄</div>
+                <div class="dl-card-title">Cover Letter</div>
+                <div class="dl-card-desc">Click to open my professional cover letter</div>
+            </a>
 
             <!-- Profiling Sheet -->
-            <div class="dl-card">
-                <div class="dl-card-header">
-                    <div class="dl-card-icon">🗂️</div>
-                    <div>
-                        <div class="dl-card-title">Profiling Sheet</div>
-                        <div class="dl-card-desc">A comprehensive personal profiling sheet capturing my strengths and career goals.</div>
-                    </div>
-                </div>
-                <iframe
-                    class="dl-pdf-embed"
-                    src="assets/assignments/Profiling_Sheet.pdf"
-                    title="Profiling Sheet PDF"
-                    id="profiling-sheet-embed"
-                ></iframe>
-                <div class="dl-btn-row">
-                    <a class="dl-btn dl-btn-primary"
-                       href="assets/assignments/Profiling_Sheet.pdf"
-                       target="_blank"
-                       id="view-profiling-sheet">🔗 Open Full Screen</a>
-                    <a class="dl-btn dl-btn-outline"
-                       href="assets/assignments/Profiling_Sheet.pdf"
-                       download="Profiling_Sheet.pdf"
-                       id="dl-profiling-sheet">⬇ Download</a>
-                </div>
-            </div>
+            <a class="dl-card" href="assets/assignments/Profiling_Sheet.pdf" target="_blank" id="view-profiling-sheet">
+                <div class="dl-card-icon">🗂️</div>
+                <div class="dl-card-title">Profiling Sheet</div>
+                <div class="dl-card-desc">Click to open my personal profiling sheet</div>
+            </a>
 
         </div>
     </section>
