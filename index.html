@@ -843,6 +843,104 @@
         }
 
         /* =========================================
+       DOWNLOAD CARDS
+    ========================================= */
+        .downloads-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 36px;
+        }
+
+        .dl-card {
+            background: var(--card2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 26px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            transition: transform .25s, box-shadow .25s, border-color .25s;
+        }
+
+        .dl-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow);
+            border-color: rgba(0, 255, 135, 0.45);
+        }
+
+        .dl-card-icon {
+            font-size: 2.4rem;
+            line-height: 1;
+        }
+
+        .dl-card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .dl-card-desc {
+            font-size: .85rem;
+            color: var(--muted);
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .dl-btn-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .dl-btn {
+            flex: 1;
+            padding: 9px 0;
+            border-radius: 8px;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+            cursor: pointer;
+            border: none;
+            transition: all .2s;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .dl-btn-primary {
+            background: linear-gradient(135deg, var(--green2), var(--green));
+            color: #000;
+        }
+
+        .dl-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,255,135,.35);
+            color: #000;
+        }
+
+        .dl-btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--border);
+            color: var(--text);
+        }
+
+        .dl-btn-outline:hover {
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        .dl-section-label {
+            font-family: 'Fira Code', monospace;
+            font-size: .78rem;
+            color: var(--green);
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            margin-top: 48px;
+            margin-bottom: 6px;
+            opacity: .85;
+        }
+
+        /* =========================================
        FOOTER
     ========================================= */
         footer {
@@ -1075,6 +1173,50 @@
                     <li>Incident Response Simulation – led a tabletop exercise and drafted the response playbook.</li>
                 </ul>
             </div>
+        </div>
+
+        <!-- ===== DOWNLOADABLE DOCUMENTS ===== -->
+        <p class="dl-section-label reveal">// Downloadable Documents</p>
+        <div class="downloads-row reveal" id="downloads">
+
+            <!-- Cover Letter -->
+            <div class="dl-card">
+                <div class="dl-card-icon">📄</div>
+                <div class="dl-card-title">Cover Letter</div>
+                <div class="dl-card-desc">
+                    My professional cover letter highlighting my background in Cyber Security, key skills, and motivation for opportunities in the field.
+                </div>
+                <div class="dl-btn-row">
+                    <a class="dl-btn dl-btn-primary"
+                       href="assets/assignments/Cover_Letter.pdf"
+                       target="_blank"
+                       id="view-cover-letter">👁 View</a>
+                    <a class="dl-btn dl-btn-outline"
+                       href="assets/assignments/Cover_Letter.pdf"
+                       download="Cover_Letter.pdf"
+                       id="dl-cover-letter">⬇ Download</a>
+                </div>
+            </div>
+
+            <!-- Profiling Sheet -->
+            <div class="dl-card">
+                <div class="dl-card-icon">🗂️</div>
+                <div class="dl-card-title">Profiling Sheet</div>
+                <div class="dl-card-desc">
+                    A comprehensive personal profiling sheet capturing my academic background, strengths, skills, and career goals.
+                </div>
+                <div class="dl-btn-row">
+                    <a class="dl-btn dl-btn-primary"
+                       href="assets/assignments/Profiling_Sheet.pdf"
+                       target="_blank"
+                       id="view-profiling-sheet">👁 View</a>
+                    <a class="dl-btn dl-btn-outline"
+                       href="assets/assignments/Profiling_Sheet.pdf"
+                       download="Profiling_Sheet.pdf"
+                       id="dl-profiling-sheet">⬇ Download</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
